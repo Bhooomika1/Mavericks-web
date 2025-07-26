@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header (Navbar) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.01); /* Transparent navbar */
+    backdrop-filter: blur(5px); /* Soft blur effect */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 50px;
+}
+
+.logo img {
+    width: 70px; /* Increased size */
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover Effect - Rising Animation & Background Glow */
+nav a:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 89, 0, 0.914);
+    box-shadow: 0px 4px 10px rgb(255, 21, 0);
+    border-radius: 5px;
+}
+
+/* Active Page Highlight */
+nav ul li a.active {
+    color: red;
+    font-weight: bold;
+}
+
+/* Mobile Menu - Right Side */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 5%;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 250px;
+        text-align: right;
+        padding: 20px;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        display: block;
+        padding: 10px 20px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 800px;
+}
+
+/* Hero Text */
+h1 {
+    font-size: 5.2rem;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, red, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* Adjustments for Medium Screens */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 7vw;
+    }
+}
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 8vw;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 10vw;
+    }
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: rgb(238, 53, 7);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 15%;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Keyframes for rise-up animation */
+@keyframes riseUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to text */
+.hero h1,
+.hero p,
+.hero button {
+    opacity: 0;
+    animation: riseUp 1s ease-out forwards;
+}
+
+/* Delay different elements for smooth staggered effect */
+.hero h1 {
+    animation-delay: 0.5s;
+}
+
+.hero p {
+    animation-delay: 1s;
+}
+
+.hero button {
+    animation-delay: 1.5s;
+}
+
+/* Navbar Hover Effect */
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+nav a:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+
+
+
+
+/* Footer (Aligned like Team Page) */
+footer {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.footer-section {
+    width: 22%;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: red;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: red;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Fonts for Specific Sections */
+.footer-title,
+.mavericks-title,
+.quick-links-title,
+.contact-title,
+.follow-us-title {
+    font-family: 'Orbitron', sans-serif;
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive; /* Minecraft Font for "MEET OUR TEAM" */
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInLeft 1s forwards;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: fadeInRight 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+/* Center the "Ready to Join the Revolution?" section */
+footer {
+    text-align: center;
+    padding: 50px 20px; /* Adjust spacing */
+}
+
+.footer-title {
+    margin-bottom: 2rem; /* Space below "Ready to Join the Revolution?" */
+}
+
+footer p {
+    margin-bottom: 2rem; /* Space below paragraph */
+}
+
+/* Center the button */
+.join-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.join-btn:hover {
+    background: rgb(238, 53, 7);
+    transform: scale(1.05);
+}

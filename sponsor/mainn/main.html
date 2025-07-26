@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor Info</title>
+    <link rel="stylesheet" href="static/static.css">
+</head>
+<body>
+    <section class="sponsor-section">
+        <h2>Our Sponsors by Year</h2>
+        <div class="sponsor-output">
+            {% for year, companies in sponsors.items() %}
+                <div class="sponsor-box">
+                    <h3>{{ year }}</h3>
+                    <div class="company-list">
+                        {% for company in companies %}
+                            <div class="company-item">{{ company }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>

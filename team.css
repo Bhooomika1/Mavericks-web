@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Calibri&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+/* Header (Navbar) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: red;
+}
+
+/* Team Introduction */
+.team-intro {
+    text-align: center;
+    padding: 150px 20px 40px;  /* Increased padding from 120px to 150px */
+    background: url('background.jpg') no-repeat center center / cover;
+}
+
+.team-intro h1 {
+    font-size: 2.5rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.team-intro p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
+}
+
+/* Team Gallery */
+.team-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}
+
+.team-member {
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+}
+
+/* Prevent Scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
+
+
+
+/* Default: Hide Hamburger Menu on Larger Screens */
+.hamburger {
+    display: none;
+}
+
+/* Show Hamburger Menu Only on Small Screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;  /* Show it on mobile */
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* Hide the normal navigation on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+}
+
+
+
+/* Default: Hide Hamburger on Larger Screens */
+.hamburger {
+    display: none;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger only on mobile */
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+}
+
+
+/* Apply Minecraft font to "Meet Our Team" */
+.minecraft-font {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Apply Calibri font to navigation bar */
+.nav-links a {
+    font-family: 'Calibri', sans-serif;
+    font-size: 1rem;
+}
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap'); /* Racing Font */
+@import url('https://fonts.cdnfonts.com/css/minecraft-4'); /* Minecraft Font */
+
+/* Default Font for All Other Text */
+body, p, ul, li, a, .footer-section p {
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Apply Racing Font ONLY to Specific Headings */
+.footer-title,
+.mavericks-title,
+.quick-links-title,
+.contact-title,
+.follow-us-title {
+    font-family: 'Orbitron', sans-serif; /* Racing font */
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+/* Apply Minecraft Font to "MEET OUR TEAM" */
+.meet-our-team {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Footer Section (Aligned like About Page) */
+footer {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.footer-section {
+    width: 22%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: red;
+}
+
+
+
+/* Center the "Ready to Join the Revolution?" section */
+footer {
+    text-align: center;
+    padding: 50px 20px; /* Adjust spacing */
+}
+
+.footer-title {
+    margin-bottom: 2rem; /* Space below "Ready to Join the Revolution?" */
+}
+
+footer p {
+    margin-bottom: 2rem; /* Space below paragraph */
+}
+
+
+/* Ensure the button remains styled properly */
+.join-btn {
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.join-btn:hover {
+    background-color: darkred;
+}
+
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: red;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Button Styling */
+.join-btn {
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.join-btn:hover {
+    background-color: darkred;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
